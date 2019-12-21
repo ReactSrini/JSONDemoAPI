@@ -1,0 +1,319 @@
+{
+    "name": "home",
+    "type": "module",
+    "sequence": 0,
+    "sections": [
+        {
+            "cards": [
+                {
+                    
+                    
+                    
+                   
+                   
+                },
+
+                {
+                    "name": "worstPerforming",
+                    "props": [
+                        {
+                            "key": "cols",
+                            "value": "6"
+                        },
+                        {
+                            "key": "defaultDateRange",
+                            "value": "last30days"
+                        },
+                        {
+                            "key": "translate",
+                            "value": ["currency"]
+                        }
+                    ],
+                    "items": [
+                        {
+                            "question": "home3 1.Worst Performing Machines",
+                            "vizs": [
+                                {
+                                    "type": "table",
+                                    "coordinates": {},
+                                    "mask": ["casino"]
+                                }
+                            ]
+                        }
+                    ],
+                    "footer": [
+                        {
+                            "key": "filter",
+                            "value": "dateRangeSelector"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "",
+            "props": [
+                {
+                    "key": "cssStyle",
+                    "value": "zonePopularityNetWin-section-container"
+                }
+            ],
+            "cards": [
+                {
+                    "name": "zonePopularityNetWin",
+                    "cardMainName": "homeZoneSectionTitle",
+                    "props": [
+                        {
+                            "key": "cols",
+                            "value": "12"
+                        },
+                        {
+                            "key": "defaultDateRange",
+                            "value": "last30days"
+                        },
+                        {
+                            "key": "showHeader",
+                            "value": false
+                        },
+                        {
+                            "key": "cardTopLevelDatePicker",
+                            "value": true
+                        }
+                    ],
+                    "items": [
+                        {
+                            "question": "home3 2.zone occupancy netwin pupd by handlepulls, machine count",
+                            "props": [
+                                {
+                                    "key": "cols",
+                                    "value": "6"
+                                }
+                            ],
+                            "vizs": [
+                                {
+                                    "type": "bubbleChart",
+                                    "coordinates": {
+                                        "x": "occupancyPercent",
+                                        "y": "netwin_pupd",
+                                        "z": "machineCount",
+                                        "label": "zone",
+                                        "group": ""
+                                    },
+                                    "props": [
+                                        {
+                                            "Key": "gridLines",
+                                            "value": true
+                                        },
+                                        {
+                                            "Key": "bubbleColor",
+                                            "value": "#1BACC0"
+                                        },
+                                        {
+                                            "key": "labelAppendMetric",
+                                            "value": "machineCount"
+                                        },
+                                        {
+                                            "key": "navigattionKey",
+                                            "value": "zone"
+                                        },
+                                        {
+                                            "key": "bgColor",
+                                            "value": "#334255"
+                                        },
+                                        {
+                                            "key": "lableColor",
+                                            "value": "#fff"
+                                        },
+                                        {
+                                            "key": "chartStyle",
+                                            "value": true
+                                        }
+                                    ],
+                                    "mask": ["casino"]
+                                }
+                            ]
+                        },
+                        {
+                            "question": "home3 3.zone occupancy coinin pupd by handlepulls, machine count",
+                            "props": [
+                                {
+                                    "key": "cols",
+                                    "value": "6"
+                                }
+                            ],
+                            "vizs": [
+                                {
+                                    "type": "bubbleChart",
+                                    "coordinates": {
+                                        "x": "occupancyPercent",
+                                        "y": "coinin_pupd",
+                                        "z": "machineCount",
+                                        "label": "zone",
+                                        "group": ""
+                                    },
+                                    "props": [
+                                        {
+                                            "Key": "gridLines",
+                                            "value": true
+                                        },
+                                        {
+                                            "Key": "bubbleColor",
+                                            "value": "#1BACC0"
+                                        },
+                                        {
+                                            "key": "labelAppendMetric",
+                                            "value": "machineCount"
+                                        },
+                                        {
+                                            "key": "navigattionKey",
+                                            "value": "zone"
+                                        },
+                                        {
+                                            "key": "bgColor",
+                                            "value": "#334255"
+                                        },
+                                        {
+                                            "key": "lableColor",
+                                            "value": "#fff"
+                                        },
+                                        {
+                                            "key": "chartStyle",
+                                            "value": true
+                                        }
+                                    ],
+                                    "mask": ["casino"]
+                                }
+                            ]
+                        }
+                    ],
+                    "footer": []
+                },
+                {
+                    "name": "",
+                    "type": "btnCard",
+                    "props": [
+                        {
+                            "key": "cols",
+                            "value": "12"
+                        },
+                        {
+                            "key": "cssStyle",
+                            "value": "btnCard-cont"
+                        },
+                        {
+                            "key": "link",
+                            "name": "exploreAreaAnalysis",
+                            "props": [
+                                {
+                                    "key": "route",
+                                    "value": "/module/areaAnalysis"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "playerHighlights",
+            "title": "Player Highlights",
+            "props": [
+                {
+                    "key": "cssStyle",
+                    "value": "playerHighlights-section-container"
+                }
+            ],
+            "cards": [
+                {
+                    "name": "atRiskPlayers",
+                    "props": [
+                        {
+                            "key": "cols",
+                            "value": "6"
+                        },
+                        {
+                            "key": "defaultDateRange",
+                            "value": "last30days"
+                        }
+                    ],
+                    "items": [
+                        {
+                            "question": "home3 4.top 100 players by churn risk",
+                            "vizs": [
+                                {
+                                    "type": "table",
+                                    "coordinates": {},
+                                    "mask": ["casino"]
+                                }
+                            ]
+                        }
+                    ],
+                    "footer": [
+                        {
+                            "key": "filter",
+                            "value": "dateRangeSelector"
+                        },
+                        {
+                            "key": "link",
+                            "name": "explorePlayers_",
+                            "route": {
+                                "type": "module",
+                                "link": "/module/playerExplorer"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "insightsAllPlayers",
+                    "props": [
+                        {
+                            "key": "cols",
+                            "value": "6"
+                        },
+                        {
+                            "key": "defaultDateRange",
+                            "value": "last30days"
+                        },
+                        {
+                            "key": "onNoData",
+                            "value": {
+                                "style": {
+                                    "type": "iconWithText",
+                                    "icon": "tick",
+                                    "text": "youAreAllCaughtUp"
+                                }
+                            }
+                        }
+                    ],
+                    "items": [
+                        {
+                            "question": "home3 5.insights for all players",
+                            "vizs": [
+                                {
+                                    "type": "table",
+                                    "coordinates": {},
+                                    "mask": ["casino"]
+                                }
+                            ]
+                        }
+                    ],
+                    "footer": [
+                        {
+                            "key": "filter",
+                            "value": "dateRangeSelector"
+                        },
+                        {
+                            "key": "link",
+                            "name": "viewAllInsights",
+                            "route": {
+                                "type": "module",
+                                "link": "/module/links/insights"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+                    
+    ]
+}

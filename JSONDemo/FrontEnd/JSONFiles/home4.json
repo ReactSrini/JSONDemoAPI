@@ -1,0 +1,251 @@
+{
+    "name": "home",
+    "type": "module",
+    "sequence": 0,
+    "sections": [
+    
+        {
+            "name": "playersQuickSummary",
+            "title": "Players Quick Summary",
+            "props": [
+                {
+                    "key": "cssStyle",
+                    "value": "playersQuickSummary-section-container"
+                }
+            ],
+            "cards": [
+                {
+                    "name": "topProfitablePlayers",
+                    "props": [
+                        {
+                            "key": "cols",
+                            "value": "6"
+                        },
+                        {
+                            "key": "defaultDateRange",
+                            "value": "last30days"
+                        }
+                    ],
+                    "items": [
+                        {
+                            "question": "home4 1.top players",
+                            "vizs": [
+                                {
+                                    "type": "table",
+                                    "coordinates": {},
+                                    "mask": ["casino"]
+                                }
+                            ]
+                        }
+                    ],
+                    "footer": [
+                        {
+                            "key": "filter",
+                            "value": "dateRangeSelector"
+                        }
+                    ]
+                },
+                {
+                    "name": "leastProfitablePlayers",
+                    "props": [
+                        {
+                            "key": "cols",
+                            "value": "6"
+                        },
+                        {
+                            "key": "defaultDateRange",
+                            "value": "last30days"
+                        }
+                    ],
+                    "items": [
+                        {
+                            "question": "home4 2.bottom players",
+                            "vizs": [
+                                {
+                                    "type": "table",
+                                    "coordinates": {},
+                                    "mask": ["casino"]
+                                }
+                            ]
+                        }
+                    ],
+                    "footer": [
+                        {
+                            "key": "filter",
+                            "value": "dateRangeSelector"
+                        }
+                    ]
+                },
+                {
+                    "name": "genderAllUniqueCardedPlayers",
+                    "props": [
+                        {
+                            "key": "cols",
+                            "value": "6"
+                        },
+                        {
+                            "key": "defaultDateRange",
+                            "value": "last30days"
+                        },
+                        {
+                            "key": "headerOptions",
+                            "value": ["pintodashboard", "download", "refresh", "changeViz"]
+                        }
+                    ],
+                    "items": [
+                        {
+                            "question": "home4 3.player count by gender",
+                            "vizs": [
+                                {
+                                    "type": "donut",
+                                    "coordinates": {
+                                        "x": "gender",
+                                        "y": "activePlayerCount90",
+                                        "group": "",
+                                        "styles": [
+                                            {
+                                                "colors": ["#60b7fc", "#3995dd"],
+                                                "innerSize": "25%"
+                                            }
+                                        ]
+                                    },
+                                    "props": [
+                                        {
+                                            "key": "appendMetricToLegend",
+                                            "value": false
+                                        }
+                                    ],
+                                    "mask": ["casino"]
+                                }
+                            ]
+                        }
+                    ],
+                    "footer": [
+                        {
+                            "key": "filter",
+                            "value": "dateRangeSelector"
+                        },
+                        {
+                            "key": "link",
+                            "name": "analyzeDemographics",
+                            "route": {
+                                "type": "module",
+                                "link": "/module/playerDemographics"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "cardedAge",
+                    "title": "cardedAge",
+                    "props": [
+                        {
+                            "key": "cols",
+                            "value": "6"
+                        },
+                        {
+                            "key": "defaultDateRange",
+                            "value": "last30days"
+                        },
+                        {
+                            "key": "headerOptions",
+                            "value": [
+                                "pintodashboard",
+                                "download",
+                                "refresh",
+                                "changeViz",
+                                "editTableOptions"
+                            ]
+                        }
+                    ],
+                    "items": [
+                        {
+                            "question": "home4 4.player count by age segment",
+                            "vizs": [
+                                {
+                                    "type": "donut",
+                                    "coordinates": {
+                                        "x": "segmentName",
+                                        "y": "playerCount",
+                                        "group": "",
+                                        "styles": [
+                                            {
+                                                "colors": ["#60b7fc", "#3995dd"],
+                                                "innerSize": "25%"
+                                            }
+                                        ]
+                                    },
+                                    "mask": ["casino"],
+                                    "props": [
+                                        {
+                                            "key": "showLegend",
+                                            "value": false
+                                        },
+                                        {
+                                            "key": "xaxisLabel",
+                                            "value": false
+                                        },
+                                        {
+                                            "key": "yaxisLabel",
+                                            "value": false
+                                        },
+                                        {
+                                            "key": "yaxisLabelName",
+                                            "value": "Age Count"
+                                        },
+                                        {
+                                            "key": "axis-grouping",
+                                            "value": false
+                                        },
+                                        {
+                                            "key": "appendMetricToLegend",
+                                            "value": false
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "footer": [
+                        {
+                            "key": "filter",
+                            "value": "dateRangeSelector"
+                        },
+                        {
+                            "key": "link",
+                            "name": "analyzeDemographics",
+                            "route": {
+                                "type": "module",
+                                "link": "/module/playerDemographics"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "",
+                    "type": "btnCard",
+                    "props": [
+                        {
+                            "key": "cols",
+                            "value": "12"
+                        },
+                        {
+                            "key": "cssStyle",
+                            "value": "btnCard-cont"
+                        },
+                        {
+                            "key": "link",
+                            "name": "explorePlayers_",
+                            "props": [
+                                {
+                                    "key": "route",
+                                    "value": "/module/playerExplorer"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

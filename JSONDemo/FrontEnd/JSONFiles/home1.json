@@ -1,0 +1,395 @@
+{
+    "name": "home",
+    "type": "module",
+    "sequence": 0,
+    "sections": [
+        {
+            "name": "",
+            "loadOnMobile": true,
+            "cards": [
+                {
+                    "name": "",
+                    "props": [
+                        {
+                            "key": "cols",
+                            "value": "12"
+                        },
+                        {
+                            "key": "defaultDateRange",
+                            "value": "samedaylastweek"
+                        },
+                        {
+                            "key": "showHeader",
+                            "value": false
+                        },
+                        {
+                            "key": "cardTopLevelDatePicker",
+                            "type": "compareDatePicker",
+                            "value": true
+                        },
+                        {
+                            "key": "defaultDateRange",
+                            "value": "last30days"
+                        }
+                    ],
+                    "items": [
+                        {
+                            "question": "home1 1.key metrics and deltas",
+                            "type": "query",
+                            "queryType": "custom",
+                            "fn": "machines.overview.keyMetricsDeltas",
+                            "vizs": [
+                                {
+                                    "type": "metricsCardWithChart",
+                                    "coordinates": {},
+                                    "mask": ["day", "casino"],
+                                    "props": [
+                                        {
+                                            "key": "navigationRouteOnClick",
+                                            "value": "/module/machinesOverview"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "context": [
+                                {
+                                    "key": "startDate",
+                                    "type": "DATE",
+                                    "format": "YYYY/MM/DD"
+                                },
+                                {
+                                    "key": "endDate",
+                                    "type": "DATE",
+                                    "format": "YYYY/MM/DD"
+                                }
+                            ]
+                        }
+                    ],
+                    "footer": []
+                }
+            ]
+        },
+        {
+            "name": "",
+            "loadOnMobile": true,
+            "type": "SearchSection",
+            "props": [
+                {
+                    "key": "cssStyle",
+                    "value": "Search-section-container"
+                }
+            ],
+            "cards": []
+        },
+        {
+            "name": "pastVsActual",
+            "title": "Forecast vs Actual",
+            "props": [
+                {
+                    "key": "cssStyle",
+                    "value": "pastVsActual-section-container"
+                }
+            ],
+            "cards": [
+                {
+                    "name": "pastVsActual",
+                    "props": [
+                        {
+                            "key": "cols",
+                            "value": "12"
+                        },
+                        {
+                            "key": "defaultDateRange",
+                            "value": "last3months"
+                        },
+                        {
+                            "key": "showHeader",
+                            "value": false
+                        },
+                        {
+                            "key": "cardTopLevelDatePicker",
+                            "value": true
+                        }
+                    ],
+                    "items": [
+                        {
+                            "question": "home1 2.past vs actual analysis for coinin pupd, coinout pupd, handlepulls pupd, netwin pupd, theowin pupd",
+                            "type": "query",
+                            "fn": "home.index.pastVsActual",
+                            "vizs": [
+                                {
+                                    "type": "pastPredictedHomeCard",
+                                    "coordinates": {},
+                                    "mask": [
+                                        "coinOut",
+                                        "predictedCoinOut",
+                                        "theoWin",
+                                        "predictedTheoWin",
+                                        "casino"
+                                    ]
+                                }
+                            ],
+                            "context": [
+                                {
+                                    "key": "startDate",
+                                    "type": "DATE",
+                                    "format": "YYYY/MM/DD"
+                                },
+                                {
+                                    "key": "endDate",
+                                    "type": "DATE",
+                                    "format": "YYYY/MM/DD"
+                                }
+                            ]
+                        }
+                    ],
+                    "footer": []
+                }
+            ]
+        },
+        {
+            "name": "homePageMachineChanges",
+            "title": "Recommendations Based on your Past Machine Changes",
+            "props": [
+                {
+                    "key": "cssStyle",
+                    "value": "recommendations-section-container"
+                }
+            ],
+            "cards": [
+                {
+                    "name": "machinesHighlightsRecommendationsAll",
+                    "props": [
+                        {
+                            "key": "cols",
+                            "value": "12"
+                        },
+                        {
+                            "key": "defaultDateRange",
+                            "custom": {
+                                "startDate": "startRecommendationRunDate",
+                                "endDate": "endRecommendationRunDate"
+                            },
+                            "value": "custom"
+                        },
+                        {
+                            "key": "cardTopLevelDatePicker",
+                            "value": true
+                        },
+                        {
+                            "key": "headerOptions",
+                            "value": ["pintodashboard", "download"]
+                        },
+                        {
+                            "key": "showHeader",
+                            "value": false
+                        },
+                        {
+                            "key": "translate",
+                            "value": ["recommendationType"]
+                        },
+                        {
+                            "key": "onNoData",
+                            "value": {
+                                "style": {
+                                    "type": "iconWithText",
+                                    "icon": "emptyMailBox",
+                                    "text": "noRecommendations"
+                                }
+                            }
+                        }
+                    ],
+                    "items": [
+                        {
+                            "question": "home1 3.recommendations based on machine changes",
+                            "type": "query",
+                            "fn": "recommendations.summary.allMachines",
+                            "vizs": [
+                                {
+                                    "type": "homeRecommendationCards",
+                                    "coordinates": {},
+                                    "mask": ["casino"]
+                                }
+                            ],
+                            "context": [
+                                {
+                                    "key": "startDate",
+                                    "type": "DATE",
+                                    "format": "YYYY/MM/DD"
+                                },
+                                {
+                                    "key": "endDate",
+                                    "type": "DATE",
+                                    "format": "YYYY/MM/DD"
+                                }
+                            ]
+                        }
+                    ],
+                    "footer": []
+                }
+            ]
+        },
+        {
+            "name": "currentTargetFloorMixManufacturer",
+            "title": "Current vs Target Floor Mix by Manufacturer",
+            "props": [
+                {
+                    "key": "cssStyle",
+                    "value": "targetFloorMixAllManufacturers-section-container"
+                }
+            ],
+            "cards": [
+                {
+                    "name": "targetFloorMixAllManufacturers",
+                    "title": "Target Floor Mix > Manufacturers",
+                    "props": [
+                        {
+                            "key": "cols",
+                            "value": "12"
+                        },
+                        {
+                            "key": "defaultDateRange",
+                            "custom": {
+                                "endDate": "lastMixRecommendationRunDate"
+                            },
+                            "value": ""
+                        }
+                    ],
+                    "items": [
+                        {
+                            "question": "home1 4.target floor mix by manufacturer",
+                            "type": "query",
+                            "fn": "machines.manufacturer.floorMixGoal",
+                            "vizs": [
+                                {
+                                    "type": "bullletBarChart",
+                                    "coordinates": {
+                                        "x": "manufacturer",
+                                        "y": "actualAllocation",
+                                        "group": "",
+                                        "categories": [
+                                            {
+                                                "key": "actualAllocation",
+                                                "value": "Current Floor Mix "
+                                            },
+                                            {
+                                                "key": "targetAllocation",
+                                                "value": "Target Floor Mix"
+                                            }
+                                        ]
+                                    },
+                                    "mask": ["casino"],
+                                    "props": [
+                                        {
+                                            "key": "navigattionKey",
+                                            "value": "manufacturer"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "table",
+                                    "coordinates": {},
+                                    "mask": ["casino"]
+                                }
+                            ],
+                            "context": [
+                                {
+                                    "key": "startDate",
+                                    "type": "DATE",
+                                    "format": "YYYY/MM/DD"
+                                },
+                                {
+                                    "key": "endDate",
+                                    "type": "DATE",
+                                    "format": "YYYY/MM/DD"
+                                }
+                            ]
+                        }
+                    ],
+                    "footer": [
+                        {
+                            "key": "filter",
+                            "custom": "lastMixRecommendationRunDate",
+                            "value": "singleDateSelector"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "machinesHighlights",
+            "title": "Machines Highlights",
+            "layout": "static",
+            "props": [
+                {
+                    "key": "cssStyle",
+                    "value": "machinesHighlights-section-container"
+                }
+            ],
+            "cards": [
+                {
+                    "name": "# of Machines, Areas, Zones, Banks, Games, Denoms, Mfg, Models",
+                    "position": {
+                        "row": 1,
+                        "col": 1,
+                        "colCss": "col-md-6"
+                    },
+                    "props": [
+                        {
+                            "key": "cols",
+                            "value": "4"
+                        },
+                        {
+                            "key": "defaultDateRange",
+                            "value": "last30days"
+                        },
+                        {
+                            "key": "showHeader",
+                            "value": false
+                        }
+                    ],
+                    "items": [
+                        {
+                            "question": "home1 5.number of machines, areas, zones, banks, games, denoms, manufacturers, models",
+                            "type": "query",
+                            "queryType": "custom",
+                            "fn": "machines.count.all",
+                            "vizs": [
+                                {
+                                    "type": "overViewCard",
+                                    "coordinates": {},
+                                    "mask": ["casino"]
+                                }
+                            ],
+                            "props": [
+                                {
+                                    "key": "colOrder",
+                                    "value": [
+                                        "areaCount",
+                                        "zoneCount",
+                                        "bankCount",
+                                        "standCount",
+                                        "machineCount",
+                                        "manufacturerCount",
+                                        "modelCount",
+                                        "titleCount",
+                                        "denomCount"
+                                    ]
+                                }
+                            ],
+                            "context": []
+                        }
+                    ],
+                    "footer": [
+                        {
+                            "key": "filter",
+                            "custom": "lastImportDate",
+                            "isReadOnly": true,
+                            "value": "singleDateSelector"
+                        }
+                    ]
+                }
+                            ]
+        }
+    ]
+}

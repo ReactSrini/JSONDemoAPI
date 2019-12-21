@@ -1,0 +1,11 @@
+=> I have spiltted "home.js" into 4 files [home1,home2,home3,home4]
+=> home1,home2 and home3 => each file contains 5 questions
+=> home4.json conatains 4 questions
+=> So, there are totally 19 questions, they will be sent to API at a time using bluebird
+
+Output :
+=> It works, questions have been sent to server and received response from API
+
+
+[File are available in JSONDemo=>FrontEnd=>JSON files folder, FolderPath can be 
+modified in Config.js file]

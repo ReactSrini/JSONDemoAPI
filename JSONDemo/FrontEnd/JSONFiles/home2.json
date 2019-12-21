@@ -1,0 +1,316 @@
+{
+    "name": "home",
+    "type": "module",
+    "sequence": 0,
+    "sections": [
+        {
+            "cards": [
+                {
+                    
+                    
+                    
+                   
+                   
+                },
+                {
+                    "name": "machinesHighlightsInsightsAll",
+                    "position": {
+                        "row": 1,
+                        "col": 2,
+                        "colCss": "col-md-6"
+                    },
+                    "props": [
+                        {
+                            "key": "cols",
+                            "value": "4"
+                        },
+                        {
+                            "key": "defaultDateRange",
+                            "custom": {
+                                "startDate": "lastInsightRunDate"
+                            },
+                            "value": ""
+                        },
+                        {
+                            "key": "headerOptions",
+                            "value": ["pintodashboard", "download"]
+                        },
+                        {
+                            "key": "onNoData",
+                            "value": {
+                                "style": {
+                                    "type": "iconWithText",
+                                    "icon": "tick",
+                                    "text": "youAreAllCaughtUp"
+                                }
+                            }
+                        }
+                    ],
+                    "items": [
+                        {
+                            "question": "home2 1.all stand insights",
+                            "vizs": [
+                                {
+                                    "type": "table",
+                                    "coordinates": {},
+                                    "mask": [
+                                        "area",
+                                        "zone",
+                                        "bank",
+                                        "stand",
+                                        "insightType",
+                                        "insightLevel",
+                                        "insightMetric",
+                                        "casino"
+                                    ],
+                                    "props": [
+                                        {
+                                            "key": "noRowsDisplay",
+                                            "value": 5
+                                        }
+                                    ]
+                                }
+                            ],
+                            "context": [
+                                {
+                                    "key": "startDate",
+                                    "type": "DATE",
+                                    "format": "YYYY/MM/DD"
+                                },
+                                {
+                                    "key": "endDate",
+                                    "type": "DATE",
+                                    "format": "YYYY/MM/DD"
+                                }
+                            ],
+                            "props": [
+                                {
+                                    "key": "colOrder",
+                                    "value": ["insightText"]
+                                }
+                            ]
+                        }
+                    ],
+                    "footer": [
+                        {
+                            "key": "filter",
+                            "custom": "lastInsightRunDate",
+                            "isReadOnly": true,
+                            "value": "singleDateSelector"
+                        },
+                        {
+                            "key": "link",
+                            "name": "viewAllInsights",
+                            "route": {
+                                "type": "module",
+                                "link": "/module/links/insights"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "casinoFloorChangesTitle",
+            "title": "Changes Made to Your Casino Floor",
+            "subTitle": "casinoFloorChangesSubTitle",
+            "props": [
+                {
+                    "key": "cssStyle",
+                    "value": "casinoFloorChangesTitle-section-container"
+                }
+            ],
+            "cards": [
+                {
+                    "name": "",
+                    "load": false,
+                    "props": [
+                        {
+                            "key": "cols",
+                            "value": "12"
+                        },
+                        {
+                            "key": "defaultDateRange",
+                            "value": "last30days"
+                        },
+                        {
+                            "key": "showHeader",
+                            "value": false
+                        },
+                        {
+                            "key": "translate",
+                            "value": ["changeType"]
+                        },
+                        {
+                            "key": "cardTopLevelDatePicker",
+                            "value": true
+                        }
+                    ],
+                    "items": [
+                        {
+                            "question": "home2 2.change analysis snapshot",
+                            "type": "query",
+                            "fn": "changeAnalysis.index.snapshot",
+                            "vizs": [
+                                {
+                                    "type": "casinoFloorChangesCard",
+                                    "coordinates": {},
+                                    "mask": ["casino"]
+                                }
+                            ],
+                            "context": [
+                                {
+                                    "key": "startDate",
+                                    "type": "DATE",
+                                    "format": "YYYY/MM/DD"
+                                },
+                                {
+                                    "key": "endDate",
+                                    "type": "DATE",
+                                    "format": "YYYY/MM/DD"
+                                }
+                            ]
+                        }
+                    ],
+                    "footer": []
+                }
+            ]
+        },
+        {
+            "name": "",
+            "props": [
+                {
+                    "key": "cssStyle",
+                    "value": "machineAnalysis-section-container"
+                }
+            ],
+            "cards": [
+                {
+                    "name": "highOccupancyMachines",
+                    "props": [
+                        {
+                            "key": "cols",
+                            "value": "6"
+                        },
+                        {
+                            "key": "defaultDateRange",
+                            "value": "last30days"
+                        }
+                    ],
+                    "items": [
+                        {
+                            "question": "home2 3.machines with high occupancy",
+                            "type": "query",
+                            "fn": "machines.overview.highestOccupancy",
+                            "vizs": [
+                                {
+                                    "type": "table",
+                                    "coordinates": {},
+                                    "mask": ["casino"]
+                                }
+                            ],
+                            "context": [
+                                {
+                                    "key": "startDate",
+                                    "type": "DATE",
+                                    "format": "YYYY/MM/DD"
+                                },
+                                {
+                                    "key": "endDate",
+                                    "type": "DATE",
+                                    "format": "YYYY/MM/DD"
+                                }
+                            ]
+                        }
+                    ],
+                    "footer": [
+                        {
+                            "key": "filter",
+                            "value": "dateRangeSelector"
+                        }
+                    ]
+                },
+                {
+                    "name": "highTheoActualMachines",
+                    "props": [
+                        {
+                            "key": "cols",
+                            "value": "6"
+                        },
+                        {
+                            "key": "defaultDateRange",
+                            "value": "last30days"
+                        }
+                    ],
+                    "items": [
+                        {
+                            "question": "home2 4.machines with high win variance",
+                            "type": "query",
+                            "fn": "machines.overview.highestWinVariance",
+                            "vizs": [
+                                {
+                                    "type": "table",
+                                    "coordinates": {},
+                                    "mask": ["casino"]
+                                }
+                            ],
+                            "context": [
+                                {
+                                    "key": "startDate",
+                                    "type": "DATE",
+                                    "format": "YYYY/MM/DD"
+                                },
+                                {
+                                    "key": "endDate",
+                                    "type": "DATE",
+                                    "format": "YYYY/MM/DD"
+                                }
+                            ]
+                        }
+                    ],
+                    "footer": [
+                        {
+                            "key": "filter",
+                            "value": "dateRangeSelector"
+                        }
+                    ]
+                },
+                {
+                    "name": "topPerforming",
+                    "props": [
+                        {
+                            "key": "cols",
+                            "value": "6"
+                        },
+                        {
+                            "key": "defaultDateRange",
+                            "value": "last30days"
+                        },
+                        {
+                            "key": "translate",
+                            "value": ["currency"]
+                        }
+                    ],
+                    "items": [
+                        {
+                            "question": "home2 5.top performing machines, stand",
+                            "vizs": [
+                                {
+                                    "type": "table",
+                                    "coordinates": {},
+                                    "mask": ["casino"]
+                                }
+                            ]
+                        }
+                    ],
+                    "footer": [
+                        {
+                            "key": "filter",
+                            "value": "dateRangeSelector"
+                        }
+                    ]
+                }
+                            ]
+        }
+    ]
+}
